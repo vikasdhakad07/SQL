@@ -3,4 +3,4 @@ link: https://leetcode.com/problems/duplicate-emails/description/
 
 select email as Email from person
 group by email
-having count(email)>1 or email is null;
+having count(email)>1;
