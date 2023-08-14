@@ -1,0 +1,6 @@
+link: https://leetcode.com/problems/not-boring-movies/description/
+
+
+select id,movie,description,rating from Cinema 
+having (id)%2!=0 and description!='boring'
+order by rating desc;
