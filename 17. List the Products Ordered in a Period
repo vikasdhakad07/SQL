@@ -1,0 +1,10 @@
+link: https://leetcode.com/problems/list-the-products-ordered-in-a-period/description/
+
+
+select Products.product_name, sum(Orders.unit) as unit
+from Products right join Orders
+on Products.product_id=Orders.product_id
+where order_date >= date('2020-02-01 00:00')  
+and order_date <= date('2020-02-29 23:59')
+group by Products.product_name
+having unit>=100;
