@@ -1,0 +1,8 @@
+link: https://leetcode.com/problems/sales-analysis-iii/description/
+
+
+select Product.product_id, Product.product_name from Product left join Sales
+on Product.product_id=Sales.product_id
+group by Sales.product_id
+having min(sale_date) >= date('2019-01-01 00:00')  
+and max(sale_date) <= date('2019-03-31 23:59');
